@@ -1,0 +1,26 @@
+snippet cm "Class django model"
+class $1(models.Model):
+	""" $2 """
+
+	${3:some_field = models.ExampleField()}
+
+	def __str__(self):
+		return ''
+
+	class Meta:
+		verbose_name = ''
+endsnippet
+
+##### Django Model Fields #####
+
+snippet mcf "CharField Model"
+$1 = models.CharField('$2', max_length=${3:50})
+endsnippet
+
+snippet minf "IntegerField Model"
+$1 = models.IntegerField()
+endsnippet
+
+snippet mdf "TextField Model"
+${1:description} = models.TextField()
+endsnippet
