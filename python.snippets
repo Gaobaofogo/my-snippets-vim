@@ -11,6 +11,7 @@ class $1(models.Model):
 		verbose_name = ''
 endsnippet
 
+
 ##### Django Model Fields #####
 
 snippet mcf "CharField Model"
@@ -24,3 +25,39 @@ endsnippet
 snippet mdf "TextField Model"
 ${1:description} = models.TextField()
 endsnippet
+
+snippet mdtf "DateTimeField Model"
+$1 = models.DateTimeField('$2', auto_now_add=True)
+endsnippet	
+
+snippet mfk "ForeignKey Model"
+$1 = models.ForeignKey('${2:Here goes the model}')
+endsnippet
+
+
+##### Django Admin #####
+
+snippet cad "Class Django Admin"
+class $1(admin.ModelAdmin):
+	""" $2 """
+
+
+admin.site.register($1)
+endsnippet
+
+
+##### Django Forms #####
+
+snippet fc "Django form class"
+class ${1:ClassName}(forms.Form):
+	""" ${2:form description} """
+endsnippet
+
+snippet fif "Form IntegerField"
+$1 = forms.IntegerField(widget=forms.$2, error_messages={'$3': '$4'})
+endsnippet
+
+snippet fcf "Form CharField"
+$1 = forms.CharField(widget=forms.$2)
+endsnippet
+
