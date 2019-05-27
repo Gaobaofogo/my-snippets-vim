@@ -34,6 +34,10 @@ snippet mfk "ForeignKey Model"
 $1 = models.ForeignKey('${2:Here goes the model}')
 endsnippet
 
+snippet mdcf "DecimalField Model"
+$1 = models.DecimalField(max_digits=${2:7}, decimal_places=${3:2})
+endsnippet
+	
 
 ##### Django Admin #####
 
@@ -50,7 +54,16 @@ endsnippet
 
 snippet fc "Django form class"
 class ${1:ClassName}(forms.Form):
-	""" ${2:form description} """
+
+	${2:field = forms.ExampleField()}
+endsnippet
+
+snippet fmc "Django form model class"
+class ${1:ClassName}(forms.ModelForm):
+
+	class Meta:
+		model = ${2:ModelExample}
+		fields = [${3}]
 endsnippet
 
 snippet fif "Form IntegerField"
@@ -61,3 +74,10 @@ snippet fcf "Form CharField"
 $1 = forms.CharField(widget=forms.$2)
 endsnippet
 
+
+##### Django Decorators #####
+
+snippet lgr "@login_required decorator"
+@login_required
+endsnippet
+	
